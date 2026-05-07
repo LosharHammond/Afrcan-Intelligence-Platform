@@ -4,4 +4,10 @@ packages:
   - 'shared/*'
   - 'workers/*'
 allowBuilds:
+  '@scarf/scarf': set this to true or false
+  '@tree-sitter-grammars/tree-sitter-yaml': set this to true or false
+  better-sqlite3: false
+  core-js-pure: set this to true or false
   esbuild: set this to true or false
+  tree-sitter: set this to true or false
+  tree-sitter-json: set this to true or false

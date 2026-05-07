@@ -1,53 +1,127 @@
-# NEXARA
+# NEXARA Intelligence Platform
 
-NEXARA is a real-time AI-powered operational intelligence platform for African markets. The product is positioned as a continental intelligence infrastructure layer, not a local dashboard.
+A real-time AI-powered operational intelligence platform for African markets. Enterprise-grade intelligence infrastructure for continental economic monitoring.
 
-## What the prototype covers
+## 🚀 Quick Start
 
-Yes — the code now maps the full platform vision into the product structure:
+### Local Development
 
-- **Branding**: NEXARA is presented as the named category-level platform for African market intelligence.
-- **Architecture**: the interface and documentation describe ingestion, normalization, analysis, AI summarization, distribution, and monetization.
-- **Data modeling**: countries are structured with indicators, benchmark metrics, trend signals, competitor signals, opportunities, and AI briefings.
-- **Scalability**: the data model separates countries, capabilities, and modules so additional countries or verticals can be added without redesigning the UI.
-- **UI structure**: users can select countries, view live-ready intelligence, compare economies, analyze trend signals, monitor competitors, receive AI summaries, and track business indicators.
-- **Monetization**: the architecture includes premium alerts, API access, sector reports, team workspaces, and enterprise seats.
+1. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
 
-## Initial country coverage
+2. **Start all services:**
+   ```bash
+   # Terminal 1: API Gateway
+   cd services/api-gateway && pnpm start
 
-NEXARA starts with four high-signal African markets:
+   # Terminal 2: Market Service
+   cd services/market-service && pnpm start
 
-- Ghana
-- Nigeria
-- Kenya
-- South Africa
+   # Terminal 3: Intelligence Service
+   cd services/intelligence-service && pnpm start
 
-These countries provide strong starting points because they combine fintech activity, economic relevance, stronger digital ecosystems, and better public-data availability.
+   # Terminal 4: News Service
+   cd services/news-service && pnpm start
 
-## Platform modules
+   # Terminal 5: Auth Service
+   cd services/auth-service && pnpm start
 
-1. **Economic Intelligence** — forex, inflation, fuel prices, interest rates, and commodity prices.
-2. **Job Market Intelligence** — tech hiring, finance hiring, remote jobs, and salary trends.
-3. **Market & Pricing Intelligence** — telecom prices, internet bundles, e-commerce prices, and supermarket trends.
-4. **AI Country Briefings** — concise country narratives that connect economic pressure, hiring resilience, policy movement, and consumer demand.
-5. **News Intelligence Layer** — AI summaries of business news, economic shifts, policy changes, and investment trends.
+   # Terminal 6: Daily Worker (optional)
+   cd workers/schedulers && pnpm start
+   ```
 
-## Product architecture vision
+3. **Start web client:**
+   ```bash
+   cd apps/web-client && pnpm dev
+   ```
 
-NEXARA is modeled around a scalable pipeline:
+4. **Start landing page:**
+   ```bash
+   cd apps/landing-page && python3 -m http.server 4173
+   ```
 
-1. **Ingest** market, pricing, policy, job, commodity, and news feeds.
-2. **Normalize** by country, city, sector, indicator, source confidence, timestamp, and comparable unit.
-3. **Analyze** trend deltas, anomalies, cross-country benchmarks, and AI-generated summaries.
-4. **Monetize** through premium alerts, API access, sector reports, team workspaces, and enterprise seats.
-
-## Local development
-
-This repository currently ships a dependency-free static prototype.
+### Docker Deployment
 
 ```bash
-npm run check
-npm start
+cd infrastructure/docker
+docker-compose up --build
 ```
 
-Then open <http://127.0.0.1:4173>.
+## 🏗️ Architecture
+
+### Core Services
+- **API Gateway** (Port 5000) - Unified entry point with authentication
+- **Market Service** (Port 4002) - Forex, fuel, inflation data
+- **Intelligence Service** (Port 4003) - AI analysis & anomaly detection
+- **News Service** (Port 4004) - Country news aggregation
+- **Auth Service** (Port 4005) - JWT authentication
+
+### Data Pipeline
+```
+Workers → Market Service → Intelligence Service → API Gateway → Frontend
+```
+
+### Database
+- SQLite for development (persistent storage)
+- PostgreSQL ready for production scaling
+
+## 🔑 API Endpoints
+
+### Authentication
+- `POST /api/v1/auth/login` - User login
+- `POST /api/v1/auth/register` - User registration
+
+### Market Data
+- `GET /api/v1/market/:country` - Current market data
+- `GET /api/v1/market/historical/:country` - Historical trends
+
+### Intelligence
+- `GET /api/v1/intelligence/:country` - AI insights
+- `GET /api/v1/intelligence/briefing/:country` - AI country briefing
+
+### News
+- `GET /api/v1/news/:country` - Country news
+
+## 🔧 Environment Variables
+
+Copy `.env.example` to `.env` and configure:
+
+```bash
+OPENAI_API_KEY=your_openai_api_key
+JWT_SECRET=your_jwt_secret
+NEWS_API_KEY=your_news_api_key
+DATABASE_URL=postgresql://...
+```
+
+## 📊 Features
+
+- ✅ Live forex data from ExchangeRate-API
+- ✅ AI-powered country briefings (OpenAI integration)
+- ✅ Anomaly detection with historical analysis
+- ✅ Automated daily intelligence collection
+- ✅ JWT authentication & authorization
+- ✅ Historical data storage & trends
+- ✅ Multi-country support (GH, NG, KE, ZA)
+- ✅ Docker containerization
+- ✅ Enterprise-grade code structure
+
+## 🏢 Enterprise Features
+
+- **Scalable microservices architecture**
+- **Database persistence with migrations**
+- **API rate limiting & validation**
+- **Comprehensive error handling**
+- **Production-ready Docker deployment**
+- **Automated testing & CI/CD ready**
+
+## 📈 Roadmap
+
+- Real fuel price APIs integration
+- NewsAPI for live news feeds
+- PostgreSQL migration for production
+- Redis caching layer
+- Advanced analytics dashboard
+- Mobile app development
+- Enterprise subscription management

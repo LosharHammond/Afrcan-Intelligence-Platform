@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build:
+      context: ../../services/api-gateway
+      dockerfile: ../../infrastructure/docker/api-gateway.Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - market-service
+      - intelligence-service
+      - news-service
+      - auth-service
+
+  market-service:
+    build:
+      context: ../../services/market-service
+      dockerfile: ../../infrastructure/docker/service.Dockerfile
+    ports:
+      - "4002:4002"
+    volumes:
+      - ../../database:/app/database
+    environment:
+      - NODE_ENV=production
+
+  intelligence-service:
+    build:
+      context: ../../services/intelligence-service
+      dockerfile: ../../infrastructure/docker/service.Dockerfile
+    ports:
+      - "4003:4003"
+    volumes:
+      - ../../database:/app/database
+    environment:
+      - NODE_ENV=production
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+
+  news-service:
+    build:
+      context: ../../services/news-service
+      dockerfile: ../../infrastructure/docker/service.Dockerfile
+    ports:
+      - "4004:4004"
+    environment:
+      - NODE_ENV=production
+
+  auth-service:
+    build:
+      context: ../../services/auth-service
+      dockerfile: ../../infrastructure/docker/service.Dockerfile
+    ports:
+      - "4005:4005"
+    environment:
+      - NODE_ENV=production
+      - JWT_SECRET=${JWT_SECRET}
+
+  daily-worker:
+    build:
+      context: ../../workers/schedulers
+      dockerfile: ../../infrastructure/docker/worker.Dockerfile
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - market-service
+      - intelligence-service
+      - news-service
+
+  web-client:
+    build:
+      context: ../../apps/web-client
+      dockerfile: ../../infrastructure/docker/web-client.Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
