@@ -1,0 +1,19 @@
+{
+  "name": "nexara",
+  "version": "0.1.0",
+  "description": "A real-time AI-powered operational intelligence platform for African markets.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "check": "node scripts/check-static-site.mjs"
+  },
+  "keywords": [
+    "africa",
+    "intelligence",
+    "markets",
+    "economic-data",
+    "ai-briefings"
+  ],
+  "license": "Apache-2.0"
+}
