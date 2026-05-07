@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Africa Intelligence Platform is an AI-powered operational intelligence layer for African markets."
+    />
+    <title>Africa Intelligence Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Africa Intelligence Platform home">
+          <span class="brand-mark">AIP</span>
+          <span>
+            <strong>Africa Intelligence Platform</strong>
+            <small>Continental operational intelligence</small>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#countries">Countries</a>
+          <a href="#modules">Modules</a>
+          <a href="#briefings">AI briefings</a>
+          <a href="#architecture">Architecture</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">Category-level platform vision</p>
+            <h1 id="hero-title">The intelligence infrastructure layer for African markets.</h1>
+            <p class="hero-lede">
+              AIP turns fragmented economic, hiring, pricing, competitor, and policy signals into real-time
+              country intelligence for operators, investors, and market expansion teams.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#countries">Explore live country view</a>
+              <a class="button secondary" href="#architecture">View platform model</a>
+            </div>
+          </div>
+          <aside class="signal-card" aria-label="Live intelligence sample">
+            <div class="signal-card__header">
+              <span class="pulse"></span>
+              <span>Live country briefing</span>
+            </div>
+            <h2 id="hero-briefing-title">Nigeria operating signal</h2>
+            <p id="hero-briefing">
+              Nigeria’s inflationary pressure continues to weaken consumer purchasing power while fintech hiring
+              remains resilient across Lagos and remote roles.
+            </p>
+            <div class="signal-grid">
+              <span><strong id="hero-inflation">33.7%</strong> inflation</span>
+              <span><strong id="hero-forex">₦1,510</strong> USD FX</span>
+              <span><strong id="hero-hiring">High</strong> fintech hiring</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section" id="countries" aria-labelledby="countries-title">
+          <div class="section-heading">
+            <p class="eyebrow">Initial market coverage</p>
+            <h2 id="countries-title">Select a country. Read the market. Compare the continent.</h2>
+            <p>
+              Start with Ghana, Nigeria, Kenya, and South Africa because they combine fintech density, stronger
+              digital ecosystems, policy relevance, and better public-data availability.
+            </p>
+          </div>
+          <div class="country-layout">
+            <div class="country-tabs" role="tablist" aria-label="Country selector" id="country-tabs"></div>
+            <article class="country-panel" id="country-panel" aria-live="polite"></article>
+          </div>
+        </section>
+
+        <section class="section" id="modules" aria-labelledby="modules-title">
+          <div class="section-heading compact">
+            <p class="eyebrow">Platform modules</p>
+            <h2 id="modules-title">From raw public data to operational decisions.</h2>
+          </div>
+          <div class="module-grid" id="module-grid"></div>
+        </section>
+
+        <section class="section split" id="briefings" aria-labelledby="briefings-title">
+          <div>
+            <p class="eyebrow">Signature feature</p>
+            <h2 id="briefings-title">AI country briefings for decision-makers.</h2>
+            <p>
+              AIP summarizes the relationship between macroeconomic pressure, sector hiring, consumer pricing,
+              policy changes, and competitor movement into a concise operating narrative.
+            </p>
+          </div>
+          <div class="briefing-stack" id="briefing-stack"></div>
+        </section>
+
+        <section class="section architecture" id="architecture" aria-labelledby="architecture-title">
+          <div class="section-heading compact">
+            <p class="eyebrow">Scalable from day one</p>
+            <h2 id="architecture-title">A continental data model designed for new countries and verticals.</h2>
+          </div>
+          <div class="architecture-grid">
+            <div class="architecture-node">
+              <span>01</span>
+              <h3>Ingest</h3>
+              <p>Forex, CPI, commodities, jobs, news, telecom tariffs, commerce pricing, and public policy feeds.</p>
+            </div>
+            <div class="architecture-node">
+              <span>02</span>
+              <h3>Normalize</h3>
+              <p>Country, city, sector, indicator, source confidence, timestamp, and comparable units.</p>
+            </div>
+            <div class="architecture-node">
+              <span>03</span>
+              <h3>Analyze</h3>
+              <p>Trend deltas, anomaly detection, cross-country benchmarking, and AI-generated executive summaries.</p>
+            </div>
+            <div class="architecture-node">
+              <span>04</span>
+              <h3>Monetize</h3>
+              <p>Team workspaces, premium alerts, API access, sector reports, and enterprise market-monitoring seats.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
