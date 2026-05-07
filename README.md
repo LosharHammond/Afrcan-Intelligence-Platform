@@ -1,10 +1,21 @@
-# Africa Intelligence Platform (AIP)
+# NEXARA
 
-Africa Intelligence Platform is a real-time AI-powered operational intelligence platform for African markets. The product is positioned as a continental intelligence infrastructure layer, not a local dashboard.
+NEXARA is a real-time AI-powered operational intelligence platform for African markets. The product is positioned as a continental intelligence infrastructure layer, not a local dashboard.
+
+## What the prototype covers
+
+Yes — the code now maps the full platform vision into the product structure:
+
+- **Branding**: NEXARA is presented as the named category-level platform for African market intelligence.
+- **Architecture**: the interface and documentation describe ingestion, normalization, analysis, AI summarization, distribution, and monetization.
+- **Data modeling**: countries are structured with indicators, benchmark metrics, trend signals, competitor signals, opportunities, and AI briefings.
+- **Scalability**: the data model separates countries, capabilities, and modules so additional countries or verticals can be added without redesigning the UI.
+- **UI structure**: users can select countries, view live-ready intelligence, compare economies, analyze trend signals, monitor competitors, receive AI summaries, and track business indicators.
+- **Monetization**: the architecture includes premium alerts, API access, sector reports, team workspaces, and enterprise seats.
 
 ## Initial country coverage
 
-AIP starts with four high-signal African markets:
+NEXARA starts with four high-signal African markets:
 
 - Ghana
 - Nigeria
@@ -23,7 +34,7 @@ These countries provide strong starting points because they combine fintech acti
 
 ## Product architecture vision
 
-AIP is modeled around a scalable pipeline:
+NEXARA is modeled around a scalable pipeline:
 
 1. **Ingest** market, pricing, policy, job, commodity, and news feeds.
 2. **Normalize** by country, city, sector, indicator, source confidence, timestamp, and comparable unit.

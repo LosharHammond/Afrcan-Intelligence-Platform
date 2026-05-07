@@ -2,7 +2,7 @@ import { readFile } from 'node:fs/promises';
 
 const requiredFiles = ['index.html', 'src/app.js', 'src/data.js', 'src/styles.css'];
 const requiredCopy = [
-  'Africa Intelligence Platform',
+  'NEXARA',
   'Economic Intelligence',
   'Job Market Intelligence',
   'Market & Pricing Intelligence',
@@ -10,7 +10,10 @@ const requiredCopy = [
   'Ghana',
   'Nigeria',
   'Kenya',
-  'South Africa'
+  'South Africa',
+  'Compare economies',
+  'Monitor competitors',
+  'AI Country Briefings'
 ];
 
 for (const file of requiredFiles) {

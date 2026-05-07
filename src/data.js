@@ -14,6 +14,15 @@ export const countries = [
       { label: 'Fuel pressure', value: 'Medium', tone: 'watch' },
       { label: 'Tech hiring', value: 'Growing', tone: 'good' }
     ],
+    trendSignals: ['Cedi confidence improving', 'Mobile-money adoption rising', 'Retail baskets remain fuel-sensitive'],
+    competitorSignals: ['Mobile-money providers expanding merchant tools', 'Digital lenders testing SME credit products'],
+    benchmark: {
+      inflation: 'Disinflation',
+      forex: 'Stabilizing',
+      hiring: 'Growing',
+      pricing: 'Fuel-sensitive',
+      competitorActivity: 'Moderate'
+    },
     opportunities: ['Mobile money analytics', 'SME credit scoring', 'Retail price tracking']
   },
   {
@@ -31,6 +40,15 @@ export const countries = [
       { label: 'Fuel pressure', value: 'High', tone: 'risk' },
       { label: 'Fintech hiring', value: 'Resilient', tone: 'good' }
     ],
+    trendSignals: ['Consumer purchasing power under pressure', 'Fintech hiring resilient', 'Policy and FX changes moving quickly'],
+    competitorSignals: ['Payment companies deepening agent networks', 'Digital banks competing on transfers and savings'],
+    benchmark: {
+      inflation: 'High',
+      forex: 'Volatile',
+      hiring: 'Resilient',
+      pricing: 'Rising',
+      competitorActivity: 'High'
+    },
     opportunities: ['Fintech competitor monitoring', 'Consumer price intelligence', 'Policy risk alerts']
   },
   {
@@ -48,6 +66,15 @@ export const countries = [
       { label: 'Remote jobs', value: 'Active', tone: 'good' },
       { label: 'Telecom pricing', value: 'Competitive', tone: 'good' }
     ],
+    trendSignals: ['Nairobi remote hiring active', 'Telecom bundle competition visible', 'Logistics and mobile-money signals reinforcing growth'],
+    competitorSignals: ['Mobile-money ecosystems bundling merchant services', 'Logistics startups tracking regional corridor demand'],
+    benchmark: {
+      inflation: 'Moderate',
+      forex: 'Stable',
+      hiring: 'Active',
+      pricing: 'Competitive',
+      competitorActivity: 'High'
+    },
     opportunities: ['Mobile-money benchmarking', 'Logistics pricing', 'Remote talent intelligence']
   },
   {
@@ -65,7 +92,47 @@ export const countries = [
       { label: 'Finance hiring', value: 'Steady', tone: 'good' },
       { label: 'Retail pricing', value: 'Trackable', tone: 'stable' }
     ],
+    trendSignals: ['Enterprise technology demand steady', 'Energy and rate sensitivity remain key risks', 'Retail pricing data is comparatively trackable'],
+    competitorSignals: ['Enterprise SaaS providers competing on workflow automation', 'Financial services firms monitoring customer affordability'],
+    benchmark: {
+      inflation: 'Moderate',
+      forex: 'Stable',
+      hiring: 'Steady',
+      pricing: 'Trackable',
+      competitorActivity: 'Moderate'
+    },
     opportunities: ['Enterprise competitor intel', 'Capital-market dashboards', 'Retail basket tracking']
+  }
+];
+
+export const platformCapabilities = [
+  {
+    name: 'Select a country',
+    summary: 'Move between Ghana, Nigeria, Kenya, and South Africa from one country intelligence model.'
+  },
+  {
+    name: 'View live intelligence',
+    summary: 'Surface live-ready operating signals across forex, inflation, fuel, jobs, pricing, policy, and news.'
+  },
+  {
+    name: 'Analyze trends',
+    summary: 'Turn time-series indicators into deltas, anomaly flags, market direction, and executive context.'
+  },
+  {
+    name: 'Compare economies',
+    summary: 'Benchmark countries by macro pressure, hiring resilience, pricing movement, and competitor activity.'
+  },
+  {
+    name: 'Monitor competitors',
+    summary: 'Track market moves by fintechs, telecoms, retailers, logistics players, banks, and enterprise software firms.'
+  },
+  {
+    name: 'Receive AI summaries',
+    summary: 'Generate AI country briefings that explain what changed, why it matters, and what to watch next.'
+  },
+  {
+    name: 'Track business indicators',
+    summary: 'Maintain normalized indicators for country, sector, source confidence, timestamp, and comparable unit.'
   }
 ];
 
@@ -84,6 +151,11 @@ export const modules = [
     name: 'Market & Pricing Intelligence',
     summary: 'Telecom bundles, internet prices, e-commerce baskets, supermarket trends, and consumer affordability signals.',
     feeds: ['Telecom tariffs', 'Online stores', 'Supermarket catalogs', 'Price crawlers']
+  },
+  {
+    name: 'AI Country Briefings',
+    summary: 'Narrative summaries that connect macro pressure, hiring resilience, policy movement, and demand signals.',
+    feeds: ['Normalized indicators', 'Verified news context', 'Country models', 'Executive prompt templates']
   },
   {
     name: 'News Intelligence Layer',
