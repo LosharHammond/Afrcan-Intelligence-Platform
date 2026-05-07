@@ -1,12 +1,11 @@
 {
-  "name": "nexara",
+  "name": "nexara-platform",
   "version": "0.1.0",
   "description": "A real-time AI-powered operational intelligence platform for African markets.",
   "private": true,
-  "type": "module",
   "scripts": {
-    "start": "python3 -m http.server 4173 --bind 127.0.0.1",
-    "check": "node scripts/check-static-site.mjs"
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build"
   },
   "keywords": [
     "africa",

@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 
-const requiredFiles = ['index.html', 'src/app.js', 'src/data.js', 'src/styles.css'];
+const requiredFiles = ['apps/landing-page/index.html', 'apps/landing-page/src/app.js', 'apps/landing-page/src/data.js', 'apps/landing-page/src/styles.css'];
 const requiredCopy = [
   'NEXARA',
   'Economic Intelligence',
